@@ -1,0 +1,2 @@
+document.getElementById("hamburger").addEventListener("click",(function(){var e=document.getElementById("menu");"block"===e.style.display?e.style.display="none":e.style.display="block"}));
+//# sourceMappingURL=app.js.map

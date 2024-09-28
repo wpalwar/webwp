@@ -1,0 +1,149 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+
+  // @extend .poppins-regular;
+
+  @include poppins-style(400);
+
+  font-size: $baseSize;
+  line-height: 1.2;
+  color: $blackLight;
+  text-size-adjust: none;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Basic styles for links
+ */
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $baseColor;
+  }
+}
+
+a[href^="tel"] {
+  font-family: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+/**
+ * Rules
+ */
+
+hr {
+  height: 1px;
+  background-color: $primary;
+}
+
+// .p-0 {
+//   padding: 0 !important;
+// }
+
+// .p-1 {
+//   padding: 1rem !important;
+// }
+
+// .p-2 {
+//   padding: 2rem !important;
+// }
+
+// .p-3 {
+//   padding: 3rem !important;
+// }
+
+// .p-4 {
+//   padding: 4rem !important;
+// }
+
+// .p-5 {
+//   padding: 5rem !important;
+// }
+
+a:active,
+a:focus,
+li:focus,
+li:active {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: transparent !important; /* Chrome/Safari */ /* Firefox */ /* IE10+ */
+  user-select: none;
+}
+
+img,
+figure {
+  max-width: 100%;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+// Example usage of mixins
+.container {
+  @include container; // Default is normal container
+}
+
+.container-fluid {
+  @include container(true); // Fluid container
+}
+
+.row {
+  @include row;
+}
+
+// .column {
+//   @include column(4, "desktop"); // Default column size for desktop
+// }
+
+// @media (min-width: map-get($breakpoints, "tablet")) {
+//   .column-tablet {
+//     @include column(6, "tablet"); // Column size for tablets
+//   }
+// }
+
+// @media (max-width: map-get($breakpoints, "mobile")) {
+//   .column-mobile {
+//     @include column(12, "mobile"); // Column size for mobile
+//   }
+// }
+
+.section-block {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+
+  a {
+    @include poppins-style(600);
+  }
+}
+
+.mb-2 {
+  padding: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}

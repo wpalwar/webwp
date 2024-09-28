@@ -1,0 +1,123 @@
+.article-wrapper,
+.video-wrapper {
+    margin: 2rem 0;
+}
+.entry-container {
+    margin-top: 3rem;
+
+    @include respond-to("tablet") {
+        width: 80%;
+        margin: 3rem auto 0;
+    }
+
+    p,
+    ul li,
+    ol li {
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        line-height: 1.8;
+        letter-spacing: .25px;
+        word-spacing: 1.5px;
+
+        a {
+            @include poppins-style(600);
+
+            text-decoration: underline;
+        }
+    }
+
+    iframe {
+        width:100%;
+        margin-bottom: 1rem;
+        border-top-right-radius: 1.5rem;
+
+        @include respond-to("tablet") {
+            width:560px;
+        }
+    }
+
+    figure {
+        margin-bottom: 2rem;
+        border-top-right-radius: 1.5rem;
+        background: $lightGrey;
+        text-align: center;
+    
+        img {
+          border-top-right-radius: 1.5rem;
+        }
+    
+        figcaption {
+          padding: 1.5rem 1rem;
+          font-size: 1.4rem;
+          font-style: italic;
+        }
+      }
+
+    .entry-title {
+        margin: 3rem 0;
+        color: $blackLight;
+
+        @include roboto-style(600);
+    }
+
+    .article-subtitle {
+        margin: 3rem 0;
+    }
+
+    .article-meta-info {
+        font-size: 1.6rem;
+    }
+
+    .post-date {
+        margin: 1rem 0 2rem;
+        opacity: .7;
+    }
+
+    .article-thumbnail img,
+    .video-thumbnail {
+        width: 100%;
+        margin-bottom: 2rem;
+        border-top-right-radius: 1.5rem;
+        overflow: hidden;
+    }
+
+
+}
+
+#jp-relatedposts {
+    .jp-relatedposts-post {
+        width: 48%!important;
+        padding: 0!important;
+        border-top-right-radius: 1.5rem;
+        box-shadow: 0 3px 6px 0 #00000029;
+        opacity: 1!important;
+        overflow: hidden;
+
+        @include respond-to("tablet") {
+        
+            width:31%!important
+        }
+    }
+
+    h4 {
+        margin: 0!important;
+        padding: 1rem;
+    }
+
+    a {
+        font-style: 500!important;
+    }
+
+    .jp-relatedposts-post-excerpt {
+        max-height: 5.2em!important;
+        padding: 0 1rem!important;
+        line-height: 1.7!important;
+    }
+
+    .jp-relatedposts-items {
+        margin: 0!important;
+        display: flex!important;
+        justify-content: space-between;
+        flex-wrap: wrap
+    }
+}

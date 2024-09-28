@@ -1,0 +1,49 @@
+.site-footer {
+	width: 100%;
+	display: block;
+	float: left;
+	background-color: $primary;
+	padding-top: 4rem;
+
+	.widgetarea {
+		border-bottom: solid 1px #fff;
+		flex-wrap: wrap;
+		align-items: baseline;
+		width: 100%;
+		margin-bottom: 2rem;
+		@include column(6);
+		@include respond-to('mobile') {
+			border-bottom: 0;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+		&--socialconnect {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&--copyright {
+			text-align: right;
+			color: $white;
+			text-transform: uppercase;
+			@include poppins-style(500);
+		}
+	}
+
+	.widgetarea-wrapper {
+		flex-wrap: wrap;
+		align-items: baseline;
+	}
+
+	.widgetarea-title {
+		margin-bottom: 1rem;
+		display: block;
+		color: $white;
+		text-transform: uppercase;
+
+		@include poppins-style(500);
+	}
+}

@@ -1,0 +1,359 @@
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 0 1.7rem;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 20px 0 rgb(0 0 0 / 5%);
+}
+
+.hamburger-icon {
+  width: 3.3rem;
+  height: 2.4rem;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 0.4rem);
+  right: 0;
+  z-index: 1;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+
+  .line {
+    width: 3.3rem;
+    height: 0.4rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+    right: 0;
+    display: block;
+    background: #05445e;
+
+    &.line-1 {
+      top: 0;
+    }
+
+    &.line-2 {
+      top: 50%;
+    }
+
+    &.line-3 {
+      top: 100%;
+    }
+  }
+}
+
+.header-logo {
+  width: 140px;
+
+  .logo {
+    display: block;
+  }
+
+  .site-language {
+    position: relative;
+  }
+
+  .current-lang {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include roboto-style(700);
+
+    color: #05445e;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+
+  .current-lang svg {
+    width: 2rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+
+    path {
+      fill: #05445e;
+    }
+  }
+}
+
+.language-list {
+  display: none;
+}
+
+.language-list li:not(:last-child) {
+  margin-bottom: 10px;
+  border-bottom: solid 0.1rem #ffffff1a;
+}
+
+.language-list a {
+  width: 100%;
+  color: #fff;
+  padding: 1rem;
+}
+
+.language-list a:hover {
+  background: #04C096;
+  color: #555;
+}
+
+.site-language:hover .language-list {
+  width: 12rem;
+  height: fit-content;
+  padding-left: 0;
+  border-radius: 0.5rem;
+  border: solid 0.1rem #ffffff70;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: #05445e;
+  left: 0;
+  top: 100%;
+  z-index: 99;
+}
+
+.header-nav {
+  width: calc(100% - 150px);
+
+ // padding-top: 5px;
+  display: flex;
+  justify-content: end;
+}
+
+.header-nav-icon {
+  width: 90px;
+  display: flex;
+  position: relative;
+}
+
+.primary-navlist {
+  list-style-type: none;
+  text-align: right;
+
+  li {
+    margin-right: 4rem;
+    position: relative;
+    display: inline;
+
+    a::after {
+      content:'';
+      width: 0;
+      height: .2rem;
+      position: absolute;
+      left: 0;
+      bottom: -0.5rem;
+      background: $primary;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  li:hover {
+    margin-right: 4rem;
+
+    a {
+     color:$primary;
+    }
+
+    a::after {
+      content:'';
+      width: 100%;
+      height: .2rem;
+      position: absolute;
+      left: 0;
+      bottom: -.5rem;
+      background: $primary;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  a {
+    @include poppins-style(600);
+
+    position: relative;
+    margin-bottom: 10px;
+    color: rgb(0 0 0 / 75%);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    line-height: 1.8;
+
+    @include respond-to("tablet") {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+
+  
+
+  .current-menu-item {
+    a {
+      color: $primary;
+    }
+
+    a::after {
+      width: 100%;
+    }
+  }
+}
+
+
+/* floatingMenu SCSS */
+
+.floatingMenu {
+  width: 90%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left:100%;
+  right: 0;
+  z-index: 99;
+  overflow: hidden;
+  transition: all .6s ease-in-out;
+
+  @include respond-to("tablet") {
+    width:50%;
+  }
+
+  @include respond-to("desktop") {
+    width:30%;
+  }
+
+  .navmenu-container {
+    height: calc(100% - 7.8rem);
+    position: relative;
+    z-index: 2;
+    background: $white;
+    overflow-y: scroll;
+    
+  }
+
+  .navmenu-inner {
+    padding: 2rem 3rem;
+  }
+
+  .navmenu-items {
+    padding:0 0 2rem;
+    border-bottom: .1rem solid #ccc;
+    clear: both;
+    list-style-type: none;
+
+    li {
+      position: relative;
+
+      a {
+        padding: 1rem 0;
+        display: block;
+        font-size: 1.8rem;
+        color: $baseColor;
+        text-transform: uppercase;
+
+        @include poppins-style(500);
+      }
+    }
+  }
+
+  .menu-item-has-children>a::after {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    background-size: 100%;
+    transform: rotate(-90deg);
+    transition: all .3s ease;
+  }
+
+  .menu-item-has-children.active > a::after {
+    transform: rotate(0deg);
+  }
+
+  .sub-menu {
+    display: none;
+    list-style-type: none;
+    
+    li a {
+      padding: 1rem 0 1rem 1.5rem;
+      font-size: 0.9em;
+    }
+  }
+
+  .overlay {
+    display: none;
+    height: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: #000000b3;
+    transition: opacity 5s;
+  }
+
+  .closebtn {
+    display: inline-block;
+    float: right;
+  }
+
+  .followus-title {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    color:$primary;
+    font-size: 2rem;
+
+    @include poppins-style(500);
+  }
+
+  .followus-links {
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+
+    a {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+    }
+
+    img {
+      width:100%;
+    }
+  }
+
+  .show-link {
+    padding: 3rem 1rem;
+    display: block;
+    background: $primary;
+    color: $white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+
+    svg {
+      width:1rem;
+
+      path {
+        fill:$white;
+      }
+    }
+  }
+}
+
+.floatingMenu.menu-open {
+  left:10%;
+
+  @include respond-to("tablet") {
+    left:50%;
+  }
+
+  @include respond-to("desktop") {
+    left:70%;
+  }
+  
+  .overlay {
+    display: block;
+  }
+}

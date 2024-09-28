@@ -1,0 +1,41 @@
+// Poppins Font Styles
+.poppins {
+  &-regular {
+    @include font-style($font-family-poppins, 400);
+  }
+
+  &-medium {
+    @include font-style($font-family-poppins, 500);
+  }
+
+  &-semibold {
+    @include font-style($font-family-poppins, 600);
+  }
+
+  &-bold {
+    @include font-style($font-family-poppins, 700);
+  }
+
+  &-extrabold {
+    @include font-style($font-family-poppins, 800);
+  }
+}
+
+// Roboto Font Styles
+.roboto {
+  &-regular {
+    @include font-style($font-family-roboto, 400);
+  }
+
+  &-medium {
+    @include font-style($font-family-roboto, 500);
+  }
+
+  &-bold {
+    @include font-style($font-family-roboto, 700);
+  }
+
+  &-black {
+    @include font-style($font-family-roboto, 900);
+  }
+}
